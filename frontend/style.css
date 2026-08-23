@@ -1,0 +1,390 @@
+/* Reseta margens, espaçamentos e estabelece a caixa padrão para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define a rolagem suave ao clicar nos links do menu e a fonte padrão do site */
+html {
+    scroll-behavior: smooth;
+    font-family: 'Oxygen', sans-serif;
+    background-color: #979694;
+    color: #333;
+}
+
+/* ==========================================================
+   1. BARRA DE NAVEGAÇÃO (NAVBAR)
+   ========================================================== */
+.navbar {
+    position: relative; /* Fixa o menu no topo da tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: rgba(33, 2, 46, 0.897); /* Fundo branco levemente transparente */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.973); /* Sombra suave abaixo da navbar */
+    z-index: 1000; /* Garante que a navbar fique por cima de tudo */
+    padding: 10px 20px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Animação e estilo para cada letra da frase de brilho */
+.brilho-frase span {
+    font-family: 'Edu VIC WA NT Hand Pre', cursive;
+    font-size: 1.2rem;
+    color: #d4af37; /* Cor dourada */
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse por cima das letras */
+.brilho-frase span:hover {
+    transform: translateY(-4px) scale(1.2); /* Eleva e amplia a letra */
+    color: #ff3366; /* Altera para rosa chamativo */
+}
+
+/* Lista do menu de navegação */
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* Estilo dos links do menu */
+.menu a {
+    text-decoration: none;
+    color: #f5f2f2;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+/* Efeito hover nos links do menu */
+.menu a:hover {
+    color: #d4af37;
+}
+
+/* ==========================================================
+   2. SEÇÃO HERO / LOGO
+   ========================================================== */
+.hero {
+    padding-top: 40px; /* Dando espaço para não ficar coberto pela navbar fixa */
+    padding-bottom: 40px;
+    text-align: center;
+    background: none; /* Pode adicionar uma imagem de fundo se desejar */
+}
+
+/* Animação de pulso na logo central */
+.img-pulsando {
+    max-width: 100%;
+    height: auto;
+    animation: pulsar 10s infinite ease-in-out;
+}
+
+/* Regra dos quadros da animação de pulsar */
+@keyframes pulsar {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); } /* Aumenta 5% no meio da animação */
+    100% { transform: scale(1.5); }
+}
+
+/* ==========================================================
+   3. SEÇÕES GERAIS E SERVIÇOS
+   ========================================================== */
+section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* Container flexível para os cards de serviços */
+.servicos-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Quebra linha em telas menores */
+    margin-top: 20px;
+    margin-bottom: -450px;
+}
+
+/* Card individual de serviço */
+.card-servico {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 25px;
+    border-radius: 12px;
+    width: 280px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.781);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-servico:hover {
+    transform: translateY(-5px); /* Eleva o card ao passar o mouse */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+/* Container do carrossel de imagens */
+.carrossel-container{
+    transform: translateY(500px); /* Ajusta a posição do carrossel para alinhar com o formulário */
+    transition: transform 0.5s ease-in-out; /* Animação suave ao mover o carrossel */
+    display: flex; /*  Permite que os slides fiquem lado a lado */
+    justify-content: center; /* Centraliza o carrossel horizontalmente */
+    align-items: center; /* Centraliza o carrossel verticalmente */
+    gap: 30px;
+   
+    padding: 20px;
+}
+
+.carrossel-container{
+    flex: 1;
+    position: relative; /* Permite posicionamento absoluto dos slides */
+    max-width: 500px; /* Largura máxima do carrossel */
+    height: 500px;/* Altura fixa para o carrossel alinhar com formulário */
+    overflow: hidden; /* Esconde as imagens que saem da área visível */
+    border-radius: 12px;
+   margin-bottom: -90px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.836);
+}
+
+/*.carrossel-slide img {
+    width: 100%;
+    height: 100%; /* Garante que a imagem ocupe todo o espaço do slide */
+  /*  object-fit: cover; /* Garante que a imagem preencha o slide sem distorção */
+  /*  display: none; /* Inicialmente, todas as imagens estão ocultas 
+}/*
+
+/*mostrar imagen ativa
+.carrossel-slide img.ativo {
+    display: block; /* Mostra apenas a imagem ativa 
+}
+
+/*botões nav slide*/
+/*.btn-nav {
+   //* position: absolute; /* Posiciona os botões em relação ao carrossel */
+  /*  top: 80%; /*   Centraliza verticalmente */
+    /*transform: translateY(0%); /* Ajusta a posição para o centro exato */
+  /*  background-color: rgba(0, 0, 0, 0.5);   /* Fundo semi-transparente */
+  /*  color: #fff;    /* Cor do ícone */
+   /* border: none;   /* Remove a borda padrão */
+    /*padding: 10px 15px; /* Espaçamento interno */
+    /*cursor: pointer;    /* Cursor de mão ao passar o mouse */
+   /* border-radius: 50%;/* Botões circulares */
+    /*transform: translateX(-280%); /* Ajusta a posição para o centro exato 
+    /*font-size: 1.5rem;
+    z-index: 10; /* Garante que os botões fiquem acima das imagens 
+}/*
+
+.esqueda {
+    position: absolute; /* Posiciona o botão à esquerda do carrossel */
+   /* left: 10px; /* Posiciona o botão à esquerda */
+    
+/*}.direita {
+    position: absolute; /* Posiciona o botão à direita do carrossel */
+   /* right: 10px; /* Posiciona o botão à direita 
+}*/
+
+/* Esconde todas as imagens por padrão */
+.slide {
+    display: none;
+    width: 100%; /* Ajuste conforme o layout do seu site */
+}
+
+/* Mostra apenas a imagem que tem a classe 'ativo' */
+.slide.ativo {
+    display: block;
+}
+
+/* Estilo básico para posicionar os botões sobre as imagens (opcional) */
+.carrossel-slide {
+    position: relative;
+    max-width: 800px; /* Ajuste o tamanho do seu carrossel */
+    margin: auto;
+}
+
+.btn-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn-nav.esquerda {
+    left: 0;
+}
+
+.btn-nav.direita {
+    right: 0;
+}
+
+/* ==========================================================
+   4. FORMULÁRIO DE AGENDAMENTO
+   ========================================================== */
+.agendamento {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.815);
+    width: 40%;
+    transform: translateX(350px);
+}
+
+@media (max-width: 768px) {
+    .agendamento {
+        width: 90%;
+        transform: translateX(0);
+    }
+}
+
+#form-agendamento {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.campo label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Estilização das caixas de texto e seleções */
+.campo input, .campo select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+/* Destaque dourado ao clicar nos campos */
+.campo input:focus, .campo select:focus {
+    border-color: #d4af37;
+}
+
+/* Campos alinhados lado a lado (Data e Hora) */
+.campo-duplo {
+    display: flex;
+    gap: 15px;
+}
+
+.campo-duplo .campo {
+    flex: 1;
+}
+
+/* Botão do Formulário */
+.btn-agendar {
+    background-color: #d4af37;
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-agendar:hover {
+    background-color: #645a3d9a;
+}
+
+/* ==========================================================
+   5. INSTAGRAM, MAPA E RODAPÉ
+   ========================================================== */
+.instagram-card-fallback {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px dashed #d4af37;
+    box-shadow: #0c0c0cf1;
+}
+
+.btn-instagram {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.mapa-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.836);
+}
+
+.rodape {
+    background-color: #222;
+    color: #eee;
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+.contatos-container {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.redes-sociais a {
+    color: #d4af37;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: #888;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    margin-top: 20px;
+}
+
+/* Ajustes para telas pequenas (Celulares) */
+@media (max-width: 768px) {
+    .nav-container {
+
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+    }
+
+    .campo-duplo {
+        flex-direction: column;
+    }
+
+}
