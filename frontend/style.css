@@ -180,7 +180,7 @@ section h2 {
     /* Esconde as imagens que saem da área visível */
     border-radius: 12px;
     margin-bottom: -90px;
-    box-shadow: 25px 15px rgba(0, 0, 0, 0.445);
+    box-shadow: 25px 15px rgba(0, 0, 0, 0.671);
     margin-left: 50px;
 }
 
@@ -231,7 +231,7 @@ section h2 {
 .agendamento {
     background-color: #fff;
     border-radius: 15px;
-    box-shadow:0 25px 15px 0  rgba(0, 0, 0, 0.671);
+    box-shadow: 0 25px 15px 0 rgba(0, 0, 0, 0.671);
     width: 40%;
     margin-top: 550px;
     align-items: center;
@@ -241,28 +241,44 @@ section h2 {
 }
 
 
-@media (max-width: 768px) {
+@media screen and (max-width: 600px) {
     .agendamento {
         width: 90%;
         transform: translateX(0);
     }
 
 
-.carrossel-container {
-    width: auto;
-    border:none;
-    box-shadow: none;
-    padding: 0;  
- 
-
-}
+    .carrossel-container {
+        width: auto;
+        border: none;
+        box-shadow: none;
 
 
-carrossel-slide {
- width: 100%;
- height: auto;
- border: none;
-}
+    }
+
+
+    carrossel-slide {
+       
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    #foto {
+        display: flex;
+        width: 600px;
+        height: 600px;
+        align-items: center;
+        transform: translateX(-1 10px);
+        
+    }
+
+
+
+
+ }
 
 
 #form-agendamento {
@@ -387,7 +403,7 @@ carrossel-slide {
     padding-top: 15px;
     margin-top: 20px;
 }
-}
+
 /* Ajustes para telas pequenas (Celulares) */
 @media (max-width: 768px) {
     .nav-container {
